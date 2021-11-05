@@ -1,0 +1,29 @@
+fieldset {
+  display: flex;
+  justify-content: center;
+  border: none;
+}
+
+input {
+  background-color: #078080;
+  border-radius: 5px;
+  border: none;
+}
+
+label {
+  color: #423685;
+  font-family: cursive;
+}
+
+.form {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 10px;
+  justify-content: start;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.title_input {
+  margin-left: 2px;
+}
