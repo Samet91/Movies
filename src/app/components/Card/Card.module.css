@@ -1,0 +1,27 @@
+.card {
+  border-style: ridge;
+  margin: 30px;
+  background-color: turquoise;
+}
+
+.card_title {
+  display: flex;
+  display: inline-block;
+  margin: 5px;
+}
+
+.card_prio {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin: 5px;
+}
+
+.watched_style {
+  justify-self: flex-end;
+}
+
+[type='checkbox'] {
+  width: 15px;
+  height: 15px;
+  background-color: turquoise;
+}
