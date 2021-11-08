@@ -29,7 +29,7 @@ function App(): JSX.Element {
 
       <Inputs onSubmit={handleSubmit}></Inputs>
       {cards.map((card) => (
-        <Card title={card.title} more={card.more} priority={card.priority}/>
+        <Card title={card.title} more={card.more} priority={card.priority} />
       ))}
     </div>
   );

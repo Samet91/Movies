@@ -19,9 +19,7 @@ function Card({ title, more, priority }: CardProps): JSX.Element {
 
         <label className={classes.card_prio}>
           <span>
-            Prio <input type="number" min={1} max={10} 
-            value={priority}
-            />
+            Prio <input type="number" min={1} max={10} value={priority} />
           </span>
           <span className={classes.watched_style}>
             watched <input type="checkbox" />
