@@ -2,10 +2,10 @@ import React from 'react';
 import classes from './Priority.module.css';
 
 type PriorityProps = {
-  priority: number
-  setPriority: (priority: string) => void;
-}; 
-function Priority({priority, setPriority}: PriorityProps) : JSX.Element {
+  priority: number;
+  setPriority: (priority: number) => void;
+};
+function Priority({ priority, setPriority }: PriorityProps): JSX.Element {
   return (
     <label className={classes.priority_styles}>
       Priority{' '}
@@ -16,8 +16,8 @@ function Priority({priority, setPriority}: PriorityProps) : JSX.Element {
         value={priority}
         min={1}
         max={10}
-        onChange={(event) => setPriority(event.target.value)}
-        />
+        onChange={(event) => setPriority(event.target.valueAsNumber)}
+      />
     </label>
   );
 }

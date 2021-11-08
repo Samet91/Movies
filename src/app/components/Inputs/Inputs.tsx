@@ -1,13 +1,13 @@
 import classes from './Inputs.module.css';
 import React, { useState } from 'react';
-import Submit from '../Submit/Submit';
+import Button from '../Button/Button';
 import Priority from '../Priority/Priority';
 
 type InputProps = {
   onSubmit: (card: {
     title: string;
     more: string;
-    isDone: boolean;
+    watched: boolean;
     priority: number;
   }) => void;
 };
@@ -19,10 +19,10 @@ function Inputs({ onSubmit }: InputProps): JSX.Element {
 
   function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    onSubmit({ title, more, isDone: true, priority }); 
-    setTitle('')
-    setMore('')
-    setPriority(5)
+    onSubmit({ title, more, watched: true, priority });
+    setTitle('');
+    setMore('');
+    setPriority(5);
   }
   return (
     <form className={classes.form} onSubmit={(event) => handleSubmit(event)}>
@@ -45,7 +45,7 @@ function Inputs({ onSubmit }: InputProps): JSX.Element {
         />
       </label>
       <Priority priority={priority} setPriority={setPriority}></Priority>
-      <Submit>submit</Submit>
+      <Button>submit</Button>
     </form>
   );
 }

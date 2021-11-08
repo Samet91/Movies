@@ -1,9 +1,7 @@
 .button {
-  color: #000;
-  background: linear-gradient(180deg, #ffbb3b, #ffa90a);
-  font-size: 0.8em;
-  padding: 0.8em 2em;
+  background-color: #6665d2;
   border: none;
-  border-radius: 0.4em;
-  text-transform: uppercase;
+  border-radius: 4px;
+  margin-left: 5px;
+  width: 100px;
 }

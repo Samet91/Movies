@@ -6,9 +6,9 @@ import Card from './components/Card/Card';
 function App(): JSX.Element {
   const [cards, setCards] = useState([
     {
-      title: 'ABC',
-      more: 'das',
-      priority: 5,
+      title: 'The Equalizer',
+      more: 'The Equalizer is a 2014 American vigilante action film directed by Antoine Fuqua',
+      priority: 7,
     },
   ]);
 
@@ -19,7 +19,6 @@ function App(): JSX.Element {
   }) {
     const newCards = [card, ...cards];
     setCards(newCards);
-    return cards;
   }
 
   return (
@@ -30,7 +29,7 @@ function App(): JSX.Element {
 
       <Inputs onSubmit={handleSubmit}></Inputs>
       {cards.map((card) => (
-        <Card title={card.title} more={card.more} />
+        <Card title={card.title} more={card.more} priority={card.priority}/>
       ))}
     </div>
   );
