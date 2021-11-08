@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Title from './components/Title/Title';
 import Inputs from './components/Inputs/Inputs';
 import Card from './components/Card/Card';
+import Counter from './components/Counter/Counter';
 
 function App(): JSX.Element {
   const [cards, setCards] = useState([
@@ -21,6 +22,16 @@ function App(): JSX.Element {
     setCards(newCards);
   }
 
+  const [count, setCount] = useState<number>(0);
+
+  function decrement() {
+    if (count <= 0) {
+      alert('not allowed!');
+      return;
+    }
+    setCount(count - 1);
+  }
+
   return (
     <div>
       <header>
@@ -28,6 +39,13 @@ function App(): JSX.Element {
       </header>
 
       <Inputs onSubmit={handleSubmit}></Inputs>
+      <Counter
+        count={count}
+        decrementClick={decrement}
+        incrementClick={() => {
+          setCount(count + 1);
+        }}
+      />
       {cards.map((card) => (
         <Card title={card.title} more={card.more} priority={card.priority} />
       ))}
