@@ -5,16 +5,17 @@ type CardProps = {
   title: string;
   more: string;
   priority: number;
+  onDelete: () => void;
 };
 
-function Card({ title, more, priority }: CardProps): JSX.Element {
+function Card({ title, more, priority, onDelete }: CardProps): JSX.Element {
   return (
     <div>
       <div className={classes.card}>
-        <h1 className={classes.card_title}>{title}</h1>
-        <span>
-          <button>delete</button>
-        </span>
+        <h1 className={classes.card_title}>{title}
+        <span className={classes.delete}>
+          <button className={classes.deleteButton} onClick={onDelete}>delete</button>
+        </span></h1>
         <p>{more}</p>
 
         <label className={classes.card_prio}>

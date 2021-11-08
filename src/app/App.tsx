@@ -32,6 +32,10 @@ function App(): JSX.Element {
     setCount(count - 1);
   }
 
+  function deleteCard(cardIndex: number) {
+    setCards(cards.filter((_movie, index) => index !== cardIndex));
+  }
+
   return (
     <div>
       <header>
@@ -46,8 +50,13 @@ function App(): JSX.Element {
           setCount(count + 1);
         }}
       />
-      {cards.map((card) => (
-        <Card title={card.title} more={card.more} priority={card.priority} />
+      {cards.map((card, index) => (
+        <Card
+          title={card.title}
+          more={card.more}
+          priority={card.priority}
+          onDelete={() => deleteCard(index)}
+        />
       ))}
     </div>
   );

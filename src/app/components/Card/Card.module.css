@@ -2,12 +2,13 @@
   border-style: ridge;
   margin: 30px;
   background-color: turquoise;
+  display: grid;
 }
 
 .card_title {
-  display: flex;
-  display: inline-block;
   margin: 5px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 }
 
 .card_prio {
@@ -20,8 +21,14 @@
   justify-self: flex-end;
 }
 
-[type='checkbox'] {
-  width: 15px;
-  height: 15px;
-  background-color: turquoise;
+.delete {
+  justify-self: end;
+  margin-top: -13px;
+}
+
+.deleteButton {
+  border: none;
+  border-radius: 10px;
+  background-color: brown;
+  color: aliceblue;
 }
